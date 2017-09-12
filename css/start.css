@@ -1,0 +1,113 @@
+#start-button{
+    position: fixed;
+    margin-left: 4.5cm;
+    margin-top: 6cm;
+
+}
+#main-start-div{
+    width: 100%;
+    height: 19cm;
+}
+
+.button {
+
+    border-radius: 8px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+
+    margin: 5px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.button:hover span {
+    padding-right: 25px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+#menu-div{
+    border-radius: 10px;
+    background-color: #0f0f0f;
+    margin-left: 34cm;
+
+    margin-top: 1.8cm;
+    position: absolute;
+    width: 0.1cm;
+    height: 16cm;
+    opacity: 0.01;
+    transition: 0.5s;
+}
+#menu-icon{
+
+    position: absolute;
+    margin-left: 33cm;
+    margin-top: 2cm;
+    width: 0.7cm;
+    height: 0.7cm;
+}
+#menu-icon:hover{
+    width: 0.9cm;
+    height: 0.9cm;
+    margin-top: 1.8cm;
+    transition: 0.95s;
+}
+#closer-icon:hover{
+    width: 0.9cm;
+    height: 0.9cm;
+
+    transition: 0.95s;
+
+}
+#closer-icon{
+    width: 0.7cm;
+    height: 0.7cm;
+    margin-top: 0.3cm;
+    margin-left: 3cm;
+
+}
+.menu-items{
+    margin-left: 0.8cm;
+    width: 2.5cm;
+    text-align: center;
+}
+.menu-items:hover{
+    border-radius: 10px;
+    color: #5bc0de;
+
+
+}
+#fb-div{
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+#google-div{
+    color: white;
+    text-align: center;
+    background-color: red;
+}
+#kavii-profile{
+    margin-left: 1cm;
+    width: 2cm;
+    height: 2cm;
+
+}
