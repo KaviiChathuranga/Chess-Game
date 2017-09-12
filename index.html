@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Chess-Start</title>
+    <link href="css/start.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+
+    body{
+        background-image: url("img/chess-12.png");
+        background-repeat: no-repeat;
+    }
+
+</style>
+<body>
+<div id="main-start-div">
+    <div id="start-button">
+        <a href="chess.html" class="nxt-pg"> <button class="button" id="button" style="vertical-align:middle">
+            <span id="start-game"><b>Start Game</b> </span></button></a>
+    </div>
+    <a><img src="img/List_52px.png" id="menu-icon"></a>
+    <div id="menu-div">
+        <img src="img/Close%20Window_52px.png" id="closer-icon">
+        <h5 style="text-align: center;color: #c4e3f3">Main Menu</h5>
+        <div class="menu-items">Contact me</div>
+        <img src="img/LRM_EXPORT_20170605_151326.jpg" id="kavii-profile"><br><br>
+        <a href="https://www.facebook.com/kaviismokio"> <div class="menu-items" id="fb-div">Facebook</div><br></a>
+        <!--<img src="img/">-->
+        <a href="https://plus.google.com/107891578816234193025"><div class="menu-items" id="google-div">google</div></a>
+
+
+    </div>
+
+</div>
+
+
+
+<!--<script src="js/jquery-ui.js"></script>-->
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script src="js/start.js"></script>
+
+<script>
+
+    var color=['red','blue','yellow','green','orange','white','black','pink','purple','white'];
+    var i=0;
+
+    function AnimateTxt() {
+        $("#start-game").css("color", color[i]);
+        i++;
+        if (i == color.length) {
+            i = 0;
+        }
+    }
+    setInterval(AnimateTxt,150);
+</script>
+
+<!--<audio autoplay src="audio/Akon-Be-With-You-(Nedu%20Remix).mp3"></audio>-->
+
+
+
+</body>
+</html>

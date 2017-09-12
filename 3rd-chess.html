@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Chess</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css">
+
+
+    <style>
+        #main-div{
+            background-image: url("img/chess-12.png");
+            background-repeat: no-repeat;
+
+        }
+        @media all and (min-width:1080px) and (max-width:1900px) {
+
+            /*.div-white{*/
+            /*width: 2cm;*/
+            /*height: 2cm;*/
+            /*}*/
+            /*#left-line{*/
+            /*margin-left: 4.5cm;*/
+            /*}*/
+            /*#top-line{*/
+            /*margin-left: 4.5cm;*/
+            /*}*/
+            /*#right-line{*/
+            /*margin-left: 21.5cm;*/
+            /*}*/
+            /*#xmid-div{*/
+            /*height: 11cm;*/
+            /*width: 11cm;*/
+            /*margin-left: 5.5cm;*/
+            /*}*/
+            /*.div-black{*/
+            /*width: 2cm;*/
+            /*height: 2cm;*/
+            /*}*/
+            /*#main-div{*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*margin-right: 4cm;*/
+            /*margin-left: 5cm;*/
+            /*}*/
+            /*#mid-div{*/
+            /*height: 11cm;*/
+            /*width: 11cm;*/
+            /*margin-left: 5.5cm;*/
+            /*}*/
+        }
+
+        @media all and (min-width:768px) and (max-width:1080px) {
+            .div-white{
+                width: 1cm;
+                height: 1cm;
+            }
+            #left-line{
+                margin-left: 3.5cm;
+            }
+            #top-line{
+                margin-left: 3.5cm;
+            }
+            #right-line{
+                margin-left: 20.5cm;
+            }
+            #xmid-div{
+                height: 10cm;
+                width: 10cm;
+                margin-left: 4.5cm;
+            }
+            .div-black{
+                width: 1cm;
+                height: 1cm;
+            }
+            #main-div{
+
+                margin-right: 3cm;
+                margin-left: 4cm;
+            }
+            #mid-div{
+                height: 10cm;
+                width: 10cm;
+                margin-left: 4.5cm;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="main-div">
+    <div id="response">
+        <div id="xmid-div" style="">
+            <!---->
+            <div class="xdiv-white"  id="xr1-b1">
+                <!--<img src="img/black%20rook.png"  class="chess-img-black">-->
+            </div>
+            <div class="xdiv-black" id="xr1-b2">
+                <!--<img src="img/black bishop.png"  class="chess-img-black">-->
+            </div>
+            <div class="xdiv-white" id="xr1-b3">
+                <!--<img src="img/black%20knight.png" class="chess-img-black">-->
+            </div>
+            <div class="xdiv-black" id="xr1-b4">
+                <!--<img src="img/black%20queen.png" class="chess-img-black">-->
+            </div>
+            <div class="xdiv-white" id="xr1-b5">
+                <!--<img src="img/black%20king.png" class="chess-img-black">-->
+            </div>
+            <div class="xdiv-black"  id="xr1-b6">
+                <!--<img src="img/black%20knight.png" class="chess-img-black">-->
+            </div>
+
+            <div class="xdiv-white"  id="xr1-b7">
+                <!--<img src="img/black bishop.png" class="chess-img-black">-->
+            </div>
+            <div class="xdiv-black" id="xr1-b8">
+                <!--<img src="img/black%20rook.png" class="chess-img-black">-->
+            </div>
+
+
+
+            <div class="xdiv-black" id="xr2-b1">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)" class="chess-img-black" id="black-pawn-1">-->
+            </div>
+            <div class="xdiv-white" id="xr2-b2">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-2">-->
+            </div>
+            <div class="xdiv-black" id="xr2-b3">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-3">-->
+            </div>
+            <div class="xdiv-white" id="xr2-b4">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-4">-->
+            </div>
+            <div class="xdiv-black" id="xr2-b5">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-5">-->
+            </div>
+            <div class="xdiv-white" id="xr2-b6">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-6">-->
+            </div>
+            <div class="xdiv-black" id="xr2-b7">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-7">-->
+            </div>
+            <div class="xdiv-white" id="xr2-b8">
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-8">-->
+            </div>
+
+
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b1">
+
+            </div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b2">
+
+            </div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b3">
+
+            </div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b4">
+
+            </div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b5">
+
+            </div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b6">
+
+            </div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b7">
+
+            </div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr3-b8">
+
+            </div>
+
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b1"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b2"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b3"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b4"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b5"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b6"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b7"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr4-b8"></div>
+
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b1"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b2"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b3"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b4"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b5"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b6"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b7"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr5-b8"></div>
+
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b1"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b2"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b3"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b4"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b5"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b6"></div>
+            <div class="xdiv-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b7"></div>
+            <div class="xdiv-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="xr6-b8"></div>
+
+
+            <div class="xdiv-white" ondrop="drop(event)" ondragover="allowDrop(event)" id="xr7-b1">
+
+            </div>
+            <div class="xdiv-black" ondrop="drop(event)" ondragover="allowDrop(event)"  id="xr7-b2">
+
+            </div>
+            <div class="xdiv-white" id="xr7-b3">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-3">-->
+            </div>
+            <div class="xdiv-black" id="xr7-b4">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-4">-->
+            </div>
+            <div class="xdiv-white" id="xr7-b5">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-5">-->
+            </div>
+            <div class="xdiv-black" id="xr7-b6">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-6">-->
+            </div>
+            <div class="xdiv-white" id="xr7-b7">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-7">-->
+            </div>
+            <div class="xdiv-black" id="xr7-b8">
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-8">-->
+            </div>
+
+
+
+            <div class="xdiv-black" id="xr8-b1">
+                <!--<img src="img/white%20rook.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-white" id="xr8-b2">
+                <!--<img src="img/white%20knight.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-black" id="xr8-b3">
+                <!--<img src="img/white%20bishop.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-white" id="xr8-b4">
+                <!--<img src="img/white%20queen.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-black" id="xr8-b5">
+                <!--<img src="img/white%20king.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-white" id="xr8-b6">
+                <!--<img src="img/white%20bishop.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-black" id="xr8-b7">
+                <!--<img src="img/white%20knight.png" class="chess-img">-->
+            </div>
+            <div class="xdiv-white" id="xr8-b8">
+                <!--<img src="img/white%20rook.png" class="chess-img">-->
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------------------->
+        <div id="mid-div" style="">
+            <!---->
+            <div class="div-white"  id="r1-b1">
+                <span id="p-black-castle-1" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20rook.png"  class="chess-img-black">-->
+            </div>
+            <div class="div-black" id="r1-b2">
+                <span id="p-black-knight-1" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black bishop.png"  class="chess-img-black">-->
+            </div>
+            <div class="div-white" id="r1-b3">
+                <span id="p-black-bishop-1" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20knight.png" class="chess-img-black">-->
+            </div>
+            <div class="div-black" id="r1-b4">
+                <span id="p-black-queen" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20queen.png" class="chess-img-black">-->
+            </div>
+            <div class="div-white" id="r1-b5">
+                <span id="p-black-king" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20king.png" class="chess-img-black">-->
+            </div>
+            <div class="div-black"  id="r1-b6">
+                <span id="p-black-bishop-2" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20knight.png" class="chess-img-black">-->
+            </div>
+
+            <div class="div-white"  id="r1-b7">
+                <span id="p-black-knight-2" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black bishop.png" class="chess-img-black">-->
+            </div>
+            <div class="div-black" id="r1-b8">
+                <span id="p-black-castle-2" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20rook.png" class="chess-img-black">-->
+            </div>
+
+
+
+            <div class="div-black" id="r2-b1">
+                <span id="p-black-pawn-1" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)" class="chess-img-black" id="black-pawn-1">-->
+            </div>
+            <div class="div-white" id="r2-b2">
+                <span id="p-black-pawn-2" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-2">-->
+            </div>
+            <div class="div-black" id="r2-b3">
+                <span id="p-black-pawn-3" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-3">-->
+            </div>
+            <div class="div-white" id="r2-b4">
+                <span id="p-black-pawn-4" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-4">-->
+            </div>
+            <div class="div-black" id="r2-b5">
+                <span id="p-black-pawn-5" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-5">-->
+            </div>
+            <div class="div-white" id="r2-b6">
+                <span id="p-black-pawn-6" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-6">-->
+            </div>
+            <div class="div-black" id="r2-b7">
+                <span id="p-black-pawn-7" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-7">-->
+            </div>
+            <div class="div-white" id="r2-b8">
+                <span id="p-black-pawn-8" class="black-piece" draggable="true" ondragstart="drag(event)" ></span>
+                <!--<img src="img/black%20pawn.png"  draggable="true" ondragstart="drag(event)"  class="chess-img-black" id="black-pawn-8">-->
+            </div>
+
+
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b1"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b2"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b3"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b4"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b5"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b6"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b7"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r3-b8"></div>
+
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b1"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b2"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b3"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b4"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b5"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b6"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b7"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r4-b8"></div>
+
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b1"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b2"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b3"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b4"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b5"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b6"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b7"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r5-b8"></div>
+
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b1"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b2"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b3"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b4"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b5"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b6"></div>
+            <div class="div-black"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b7"></div>
+            <div class="div-white"  ondrop="drop(event)" ondragover="allowDrop(event)" id="r6-b8"></div>
+
+
+            <div class="div-white"  id="r7-b1">
+                <span id="p-white-pawn-1" class="white-piece"></span>
+
+            </div>
+            <div class="div-black"  id="r7-b2">
+                <span id="p-white-pawn-2" class="white-piece"></span>
+
+            </div>
+            <div class="div-white" id="r7-b3">
+                <span id="p-white-pawn-3" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-3">-->
+            </div>
+            <div class="div-black" id="r7-b4">
+                <span id="p-white-pawn-4" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-4">-->
+            </div>
+            <div class="div-white" id="r7-b5">
+                <span id="p-white-pawn-5" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-5">-->
+            </div>
+            <div class="div-black" id="r7-b6">
+                <span id="p-white-pawn-6" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-6">-->
+            </div>
+            <div class="div-white" id="r7-b7">
+                <span id="p-white-pawn-7" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-7">-->
+            </div>
+            <div class="div-black" id="r7-b8">
+                <span id="p-white-pawn-8" class="white-piece"></span>
+                <!--<img src="img/white%20pawn.png" draggable="true" ondragstart="drag(event)"   class="chess-img" id="white-pawn-8">-->
+            </div>
+
+
+
+            <div class="div-black" id="r8-b1">
+                <span id="p-white-castle-1" class="white-piece"></span>
+                <!--<img src="img/white%20rook.png" class="chess-img">-->
+            </div>
+            <div class="div-white" id="r8-b2">
+                <span id="p-white-knight-1" class="white-piece"></span>
+                <!--<img src="img/white%20knight.png" class="chess-img">-->
+            </div>
+            <div class="div-black" id="r8-b3">
+                <span id="p-white-bishop-1" class="white-piece"></span>
+                <!--<img src="img/white%20bishop.png" class="chess-img">-->
+            </div>
+            <div class="div-white" id="r8-b4">
+                <span id="p-white-queen" class="white-piece"></span>
+                <!--<img src="img/white%20queen.png" class="chess-img">-->
+            </div>
+            <div class="div-black" id="r8-b5">
+                <span id="p-white-king" class="white-piece"></span>
+                <!--<img src="img/white%20king.png" class="chess-img">-->
+            </div>
+            <div class="div-white" id="r8-b6">
+                <span id="p-white-bishop-2" class="white-piece"></span>
+                <!--<img src="img/white%20bishop.png" class="chess-img">-->
+            </div>
+            <div class="div-black" id="r8-b7">
+                <span id="p-white-knight-2" class="white-piece"></span>
+                <!--<img src="img/white%20knight.png" class="chess-img">-->
+            </div>
+            <div class="div-white" id="r8-b8">
+                <span id="p-white-castle-2" class="white-piece"></span>
+                <!--<img src="img/white%20rook.png" class="chess-img">-->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="left-line" style="text-align: center"><b>
+        <br><br>
+        8 <br><br><br><br><br>
+        7 <br><br><br><br><br>
+        6 <br><br><br><br><br>
+        5 <br><br><br><br><br>
+        4 <br><br><br><br><br>
+        3 <br><br><br><br><br>
+        2 <br><br><br><br><br>
+        1
+    </b></div>
+    <div id="top-line" style="text-align: center"><b>
+        a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        d &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        e &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        f &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        g &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        h
+    </b></div>
+    <div id="right-line" style="text-align: center"><b>
+        <br><br>
+        8 <br><br><br><br><br>
+        7 <br><br><br><br><br>
+        6 <br><br><br><br><br>
+        5 <br><br><br><br><br>
+        4 <br><br><br><br><br>
+        3 <br><br><br><br><br>
+        2 <br><br><br><br><br>
+        1
+    </b></div>
+    <div id="bottom-line" style="text-align: center"><b>
+        a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        d &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        e &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        f &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        g &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        h
+    </b></div>
+
+    <div id="side-div" style="text-align: center"><h2><b id="dash"> Dashboard </b></h2><br>
+
+        <a href="3rd-chess.html"> <div class="side-items" id="new-game">New Game</div></a>
+        <a href=""><div class="side-items" id="theme">Themes</div></a>
+        <a><div onclick="a()" class="side-items" id="3rd">3d Rotate</div></a><br>
+        <a href=""><div class="side-items" id="4th"></div></a>
+
+    </div>
+
+    <div id="theme-div"><b>Select a theme</b><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/chess-king-wallpaper-2.jpg" class="theme-img" id="king-wal">&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/chess-king-hd-wallpaper-hq-pictures.jpg" class="theme-img" id="king-black"><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <img src="img/chess-wallpaper-background-2168-2278-hd-wallpapers.jpg" class="theme-img" id="king-brown">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/chess-king-wallpaper-23.jpg" class="theme-img" id="king-gray">
+
+    </div>
+
+</div>
+
+<!--<script src="js/jquery-ui.js"></script>-->
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/Controller.js"></script>
+
+
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+
+</body>
+</html>
